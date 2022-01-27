@@ -1,5 +1,5 @@
 <?php
-    class Tester
+    class Tester extends Base
     {
         public $status = "тестировщик";
 
@@ -8,6 +8,7 @@
 
         public function __construct(string $fname, string $lname, int $money, int $countBugs)
         {
+            parent::__construct($fname, $lname, $money, 3);
             self::$count++;
             self::$tmoney += $money;
             $this->fname = $fname;
@@ -16,24 +17,9 @@
             $this->countBugs = $countBugs;
         }
 
-        public function getFI()
-        {
-            return $this->lname." ".$this->fname;
-        }
-
-        public function getSocStatus()
-        {
-            return 3;
-        }
-
         public function work()
         {
             return "тестирует приложения";
-        }
-
-        public function getMoney()
-        {
-            return $this->money;
         }
 
         public function getCountBugs()

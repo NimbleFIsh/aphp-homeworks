@@ -1,5 +1,5 @@
 <?php
-    class Director
+    class Director extends Base
     {
         public $status = "директор";
 
@@ -8,6 +8,7 @@
 
         public function __construct(string $fname, string $lname, int $money, bool $vizit)
         {
+            parent::__construct($fname, $lname, $money, 4);
             self::$count++;
             self::$tmoney += $money;
             $this->fname = $fname;
@@ -16,24 +17,9 @@
             $this->vizit = $vizit;
         }
 
-        public function getFI()
-        {
-            return $this->lname." ".$this->fname;
-        }
-
-        public function getSocStatus()
-        {
-            return 4;
-        }
-
         public function work()
         {
             return "управляет всеми";
-        }
-
-        public function getMoney()
-        {
-            return $this->money;
         }
 
         public function isVisit()

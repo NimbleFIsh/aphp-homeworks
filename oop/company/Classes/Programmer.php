@@ -1,5 +1,5 @@
 <?php
-    class Programmer
+    class Programmer extends Base
     {
         public $status = "программист";
 
@@ -8,6 +8,7 @@
 
         public function __construct(string $fname, string $lname, int $money, bool $status)
         {
+            parent::__construct($fname, $lname, $money, 2);
             self::$count++;
             self::$tmoney += $money;
             $this->fname = $fname;
@@ -16,24 +17,9 @@
             $this->status = $status;
         }
 
-        public function getFI()
-        {
-            return $this->lname." ".$this->fname;
-        }
-
-        public function getSocStatus()
-        {
-            return 2;
-        }
-
         public function work()
         {
             return "пишет код";
-        }
-
-        public function getMoney()
-        {
-            return $this->money;
         }
 
         public function inWork()

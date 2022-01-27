@@ -1,5 +1,5 @@
 <?php
-    class Manager
+    class Manager extends Base
     {
         public $status = "менеджер";
 
@@ -8,6 +8,7 @@
 
         public function __construct(string $fname, string $lname, int $money, string $theme)
         {
+            parent::__construct($fname, $lname, $money, 1);
             self::$count++;
             self::$tmoney += $money;
             $this->fname = $fname;
@@ -16,23 +17,8 @@
             $this->theme = $theme;
         }
 
-        public function getFI()
-        {
-            return $this->lname." ".$this->fname;
-        }
-
-        public function getSocStatus()
-        {
-            return 1;
-        }
-
         public function work()
         {
             return "может проводить вебинары"." на тему: ".$this->theme;
-        }
-
-        public function getMoney()
-        {
-            return $this->money;
         }
     }
