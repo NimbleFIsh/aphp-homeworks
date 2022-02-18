@@ -1,0 +1,17 @@
+{
+    "name": "phpunit/php",
+    "require": {
+        "phpunit/phpunit": "^9.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Phpunit\\Php\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "NimbleFIsh",
+            "email": "karpov2001ura@mail.ru"
+        }
+    ]
+}
